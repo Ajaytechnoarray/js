@@ -1,0 +1,106 @@
+<script>
+    // String
+    // Number
+    // Boolean
+    // null
+    // undefined
+    // BigInt
+    // Object
+
+    //comments
+    //
+    /* */
+
+
+    let e = 10;
+    var a = 20;
+    const t = "hello";
+    console.log(e + a)
+    //== , === 
+    if(t == 'hello')
+    {
+        console.log(t);
+    }
+    else 
+    {
+        console.log('t is not hello');
+    }
+
+    let color = 'hello';
+
+    switch(color)
+    {
+        case 'red':
+            console.log('color is red');
+            break
+        case 'blue':
+            console.log("color is blue");
+            break;
+        default:
+            console.log('not a color');
+    }
+
+    console.log("type of color " + typeof color);
+
+    // stirng templating 
+     e = 'hello world' ;
+     e = "hello " 
+     e = `Color is  ${color}`
+     console.log(e);
+
+     //loops
+     //while,for forEach,dowhile
+     let i = 100;
+
+     while( i > 0)
+     {
+        console.log(i);
+        i--;
+     }
+
+     for(let i = 0; i <= 100; i++)  //(n-1)
+     {
+        console.log(i)
+     }
+
+     let arr = [1,2,5,7]; //(n-1)
+
+     function sum(i,j)
+     {
+        //do your stuff
+        return i + j;
+     } 
+    
+    let b = sum(20,20)
+    console.log(b)
+
+
+    //object 
+    // perso {
+    //     legs: 2,
+    //     hands: 2,
+    //     eyes: 2,
+
+    //     walk : function()
+    //     {
+    //         console.log("walking...")
+    //     }
+
+    // } 
+
+    // let p = new person();
+    // console.log(p)
+    // console.log(typeof p)
+
+    class person {
+        constructor()
+        {
+            this.legs = 2;
+            this.hands = 2;
+        }
+    }
+
+    let p = new person();
+    console.log(p)
+    console.log(p.hands)
+</script>
