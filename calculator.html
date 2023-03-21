@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="" id="num1">
+        <select name="" id="operation" onchange="changed()">
+            <option value="add">Add</option>
+            <option value="sub">sub</option>
+            <option value="mul">mul</option>
+            <option value="div">div</option>
+        </select>
+        <input type="text" name="" id="num2">
+        <button type="button" onclick="clicked()">calculate</button>
+        <button type="button" onmouseover="f2()">mouse over</button>
+        <input type="text" name="" id="num3">
+    </form>
+
+
+    <script>
+        let num1 = document.querySelector('#num1');
+        let num2 = document.querySelector('#num2');
+        let num3 = document.querySelector('#num3');
+        let op = document.querySelector('select');
+        // num1.value = 5;
+        // console.log(num1.value);
+
+        let button = document.querySelector('button');
+        // button.addEventListener('click',clicked)//clicked
+        function clicked(e)
+        {
+            let x = parseInt(num1.value)
+            let y = parseInt(num2.value)
+            let z = '';
+            switch(op.value)
+            {
+                case 'add':
+                    z = x + y;
+                    break;
+                case 'sub':
+                    z= x - y;
+                    break;
+                case 'mul':
+                    z = x * y;
+                    break
+                case 'div':
+                    z = x / y;
+                    break;
+            }
+
+            num3.value = z
+
+        }
+
+        function f2(e)
+        {
+            console.log("have mouse over me");
+        }
+
+
+        function changed(e)
+        {
+            console.log("option is changed");
+        }
+
+        /// 
+        // let a = [1,2,3,4,6,6];
+        // a.forEach(function(element) {
+        //     console.log(element);
+        // })
+
+        
+    </script>
+</body>
+</html>

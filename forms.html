@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 50%;
+        margin: 0 auto;
+    }
+</style>
+<body>
+    <div>
+        <form action=""  method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name"><br>
+
+            <label for="email">email</label>
+            <input type="email" id="email"><br>
+
+            <label for="password">password</label>
+            <input type="password" id="password"><br>
+
+            <label for="cpassowrd">confirm password</label>
+            <input type="password" id="cpassowrd"><br>
+
+            <input type="submit" value="submit" class="submit">
+        </form>
+    </div>
+
+    <script>
+        let name = document.querySelector("#name")
+        let email = document.querySelector("#email")
+        let password = document.querySelector("#password")
+        let cpass = document.querySelector("#cpassowrd")
+        let submit = document.querySelector(".submit");
+
+        submit.addEventListener('click',function(e){
+            e.preventDefault(); 
+
+            if(name.value == '')
+            {
+                name.style.border = '1px solid red';
+            }
+
+
+            if(name.value == '' || email.value == '' || password.value == '' || cpass.value == '')
+            {
+                alert('all fields are requred');
+            }
+
+            if(password.value !== cpass.value)
+            {
+                alert('password do not matach');
+                return false;
+            }
+
+                document.querySelector("form").submit();
+            
+        })
+        // let form = querySelector("form");
+
+
+    </script>
+</body>
+</html>
