@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form action="" name="colorForm">
+            <input type="radio" checked name="color" value="red" id="red"><label for="red">red</label><br>
+            <input type="radio" name="color" value="blue" id="blue"><label for="blue">blue </label><br>
+            <input type="radio" name="color" value="green" id="green"><label for="green">green</label><br>
+        </form>
+    </div>   
+    
+    <script>
+            let cform = document.forms['colorForm'];
+            let label =  document.querySelectorAll('label');
+
+            for(let j = 0; j < cform.length; j++)
+            {
+               
+               label[j].style.color = cform[j].value
+            }
+    </script>
+</body>
+</html>
