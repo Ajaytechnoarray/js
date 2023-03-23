@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded",function(){
     h1.classList.remove("heading-2")
 
     document.querySelector('div').append(h1)
-})
+}) 
+
 
 

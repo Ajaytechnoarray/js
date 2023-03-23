@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./assets/1.jpg" style="width: 500px; height:200px;" alt="">
+    <button type="button">Change image</button>
+    <br>
+
+    <video src="./assets/SampleVideo_1280x720_1mb.mp4" width="400" height="200" controls></video><br>
+    <button id="play" onclick="play()">Play</button>
+    <button id="pause" onclick="pause()">pause</button>
+
+    <script>
+
+
+        let img = document.querySelector('img');
+        let btn = document.querySelector('button')
+
+        let images = ['1.jpg','2.jpg','3.webp'];
+
+        btn.addEventListener("click",change);
+        let counter = 0;
+        function change()
+        {
+            
+            img.src = './assets/'+images[counter]
+
+            if(counter < (images.length -1))
+                counter++;
+            else 
+                counter = 0
+
+            console.log(counter)
+            console.log(images[counter])
+        }
+
+        //change image over time 
+        setInterval(change,2000)
+
+        //video
+        let v = document.querySelector('video');
+        
+        //check if video is muted 
+        console.log(v.muted)
+        //set muted value (value is type boolean true/false) 
+        v.muted = false
+        // let btnPlay = document.querySelector("#play")
+        // let btnPause = document.querySelector("#pause")
+
+        function play()
+        {
+            v.play();
+
+        }
+
+        function pause()
+        {
+            v.pause();
+        }
+
+    </script>
+</body>
+</html>

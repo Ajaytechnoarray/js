@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+
+
+        function sayHello()
+        {
+            console.log("Hello!");
+            document.body.append('hello!')
+            setInterval(sayHello,2000)
+        }
+
+        let interval = setInterval(sayHello,1000)
+        // clearInterval(interval)
+        // setInterval('function',ms) //1000
+
+
+        //setTimeOut('function',time)
+        // setTimeout(sayHello,2000)
+
+        //recursive function
+        // let i = 1;
+        // function callMyself()
+        // {
+        //     console.log("calling...");
+        //     i++;
+            
+        //     if(i < 100)
+        //     {
+        //         callMyself()
+        //         console.log(i)
+        //     }
+        // }
+        
+        // callMyself();
+    </script>
+</body>
+</html>
