@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .alert {
+            position: absolute;
+            width: 40vw;
+            height: 40vh;
+            background-color: rgb(228, 228, 228);
+            padding: 3% 2%;
+            left: 50%;
+            top:0%;
+            transform: translate(-50%,-50%);
+            display: none;
+            
+        }
+
+        .content {
+            position: relative;
+        }
+        .close-btn
+        {
+            position: absolute;
+            right:0px;
+            top: -50px;
+        }
+
+        .show {
+            display: block;
+            top: 50%;
+            /* transition: top .5s; */
+        }
+     
+
+    </style>
+</head>
+<body>
+    <button type="button" class="show-alert">Click Me</button>
+
+    <div class="alert hide">
+        <div class="content">
+            <button class="close-btn">X</button>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos harum in nihil rem repellendus unde maxime, ad modi nam odio quis alias veniam sit quaerat totam asperiores omnis culpa aperiam.</p>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelector('.show-alert')
+        btn.addEventListener('click',function(){
+            document.querySelector('.alert').classList.toggle('show')
+
+        })
+
+        document.querySelector('.close-btn').addEventListener('click',function(){
+            document.querySelector('.alert').classList.toggle('show')
+        })
+    </script>
+</body>
+</html>

@@ -7,23 +7,29 @@
     <title>Document</title>
 </head>
 <body>
+    <button type="button" id="prev">Next</button>
     <img src="./assets/1.jpg" style="width: 500px; height:200px;" alt="">
-    <button type="button">Change image</button>
+    <button type="button" id="next">Next</button>
     <br>
 
     <video src="./assets/SampleVideo_1280x720_1mb.mp4" width="400" height="200" controls></video><br>
     <button id="play" onclick="play()">Play</button>
     <button id="pause" onclick="pause()">pause</button>
+    <button id="mute" onclick="mute()">mute</button>
+    <input type="range" name="" id="volume" min="0" max="1" step="0.1">
 
     <script>
 
 
         let img = document.querySelector('img');
-        let btn = document.querySelector('button')
+        let next = document.querySelector('#next')
+        let prev = document.querySelector('#prev')
 
         let images = ['1.jpg','2.jpg','3.webp'];
 
-        btn.addEventListener("click",change);
+        next.addEventListener("click",change);
+        prev.addEventListener('click',changeBack)
+
         let counter = 0;
         function change()
         {
@@ -39,8 +45,22 @@
             console.log(images[counter])
         }
 
+        function changeBack()
+        {
+            
+            img.src = './assets/'+images[counter]
+
+            if(counter > 0)
+                counter--;
+            else 
+                counter = images.length - 1
+
+            console.log(counter)
+            console.log(images[counter])
+        }
+
         //change image over time 
-        setInterval(change,2000)
+        // setInterval(change,2000)
 
         //video
         let v = document.querySelector('video');
@@ -63,6 +83,14 @@
             v.pause();
         }
 
+        function mute()
+        {
+            v.muted = !v.muted;
+        }
+
+        document.querySelector('#volume').addEventListener('change',function(){
+            v.volume = this.value;
+        })
     </script>
 </body>
 </html>

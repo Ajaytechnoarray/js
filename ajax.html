@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="load-btn">load data</button>
+    <div></div>
+
+    <form action="/process.php" method="POST" name="testForm" >
+        Name: <input type="text" name="name">
+        <input type="submit" value="submit" class="submit" >
+
+    </form>
+    <script>
+        let xhr = new XMLHttpRequest();
+
+        document.querySelector('.submit').addEventListener('click',function(e){
+            e.preventDefault();
+            let form = document.forms['testForm'];
+                let formData = new FormData(form);
+                xhr.onreadystatechange = function(){
+                if(xhr.readyState == xhr.DONE)
+                {
+                    if(xhr.status == 200)
+                    {
+                        document.querySelector('div').textContent = xhr.responseText
+                    }
+                    else 
+                    {
+                        alert('something went worng');
+                    }
+                }
+                
+            }
+
+            xhr.open('POST','./process.php',true)
+            xhr.send(formData);
+        })
+
+
+
+        
+        document.querySelector('.load-btn').addEventListener('click',function(){
+                let form = document.forms['testForm'];
+                let formData = new FormData(form);
+                xhr.onreadystatechange = function(){
+                if(xhr.readyState == xhr.DONE)
+                {
+                    if(xhr.status == 200)
+                    {
+                        document.querySelector('div').textContent = xhr.responseText
+                    }
+                    else 
+                    {
+                        alert('something went worng');
+                    }
+                }
+                
+            }
+
+            xhr.open('GET','content.html',true)
+            xhr.send(formData);
+        })
+
+
+
+    </script>
+</body>
+</html> 

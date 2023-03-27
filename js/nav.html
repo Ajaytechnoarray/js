@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li><a href="" class="nav-link">Animation</a></li>
+        <li><a href="" class="nav-link">Calculator</a></li>
+        <li><a href="" class="nav-link">change color</a></li>
+    </ul>
+    <script>
+        let links = document.querySelectorAll(".nav-link");
+        links.forEach(function(element){
+            console.log(element.textContent);
+            element.addEventListener('click',function(e){
+                e.preventDefault();
+                switch(this.textContent)
+                {
+                    case "Animation":
+                        console.log(this)
+                        window.location = "../animations.html"
+                        break;
+                    case "Calculator":
+                        console.log(this)
+                        window.location = "../calculator.html"
+                        break;
+                    case "change color":
+                        console.log(this)
+                        window.location = "../changecolor.html"
+                        break;
+
+                }
+            })
+        })
+    </script>
+</body>
+</html>
