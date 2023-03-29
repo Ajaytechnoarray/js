@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/AjaxClass.js"></script>
+</head>
+<body>
+
+    <form action="/process.php" method="POST" onsubmit="" name="testForm" >
+        Name: <input type="text" name="name">
+        <input type="submit" value="post" >
+
+    </form>
+    
+<script>
+    console.log(typeof ajaxRequest)
+    // ajaxRequest.get('./content.html',)
+    // document.querySelector('form').addEventListener('submit',function(event){
+    //     event.preventDefault();
+    //     let formData = new FormData(this)
+    //     ajaxRequest.post('process.php',formData)
+    // })  
+
+    // ajaxRequestImp.request({
+    //     method: 'GET',
+    //     url: 'content.html',
+    //     success : function(response){
+    //         response = JSON.parse(response)
+    //         table.innerHTML = `<tr><td>${response.name}</td><td>${response.name}</td></tr>`
+    //     }       
+    // })
+
+    const a = new ClassA('Ajay',28)
+    console.log(a.name)
+    // console.log(a.)
+    console.log(a.getName)
+
+    a.setName = 'zyz';
+    a.setNameWithFunction('abc')
+    console.log(a)
+    console.log(a.getAge())
+    // console.log(a.#privateGetAge())
+
+    const b = new ClassB('xuz',28)
+    console.log(b)
+    console.log(b.getAgeAndName())
+</script>
+</body>
+</html>
